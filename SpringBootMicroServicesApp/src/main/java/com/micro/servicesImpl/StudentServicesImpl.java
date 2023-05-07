@@ -2,10 +2,13 @@ package com.micro.servicesImpl;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.micro.entities.Student;
 import com.micro.exceptions.StudentNotFoundException;
 import com.micro.services.StudentServices;
 
+@Service
 public class StudentServicesImpl implements StudentServices{
 
 	@Override
