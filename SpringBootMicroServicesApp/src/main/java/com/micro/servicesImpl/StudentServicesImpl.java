@@ -90,7 +90,7 @@ public class StudentServicesImpl implements StudentServices{
 			
 		}else {
 			
-			throw new StudentNotFoundException("Unable to delete student details with given roll "+ studentId);
+			throw new StudentNotFoundException("Unable to delete student details with given Id "+ studentId);
 		}
 	}
 
@@ -111,4 +111,22 @@ public class StudentServicesImpl implements StudentServices{
 		}
 	}
 
+	@Override
+	public Student getStudentById(Integer studentId) throws StudentNotFoundException {
+		// TODO Auto-generated method stub
+		
+		Optional<Student> optional= dao.findById(studentId);
+		
+		if(optional.isPresent()) {
+			
+			Student existingStudent = optional.get();
+			
+			return existingStudent;
+			
+		}else {
+			
+			throw new StudentNotFoundException("Unable to get student details with given Id "+ studentId);
+		}
+	}
+	
 }
