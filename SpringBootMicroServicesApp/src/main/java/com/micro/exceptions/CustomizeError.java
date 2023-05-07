@@ -42,4 +42,5 @@ public class CustomizeError {
 	public void setDetails(String details) {
 		this.details = details;
 	}
+	
 }
