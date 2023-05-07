@@ -46,6 +46,16 @@ public class StudentController {
 		return new ResponseEntity<List<Student>>(gettingList, HttpStatus.OK);
 	}
 	
+	// 3. Updating Student details
+	
+	@PutMapping("/students")
+	public ResponseEntity<Student> updateStudentHandler(@Valid @RequestBody Student student) throws StudentNotFoundException{
+		
+		Student updateStudentDetails = studentService.updateStudent(student);
+		
+		return new ResponseEntity<Student>(updateStudentDetails, HttpStatus.ACCEPTED);
+	}
+	
 	
 	
 }
