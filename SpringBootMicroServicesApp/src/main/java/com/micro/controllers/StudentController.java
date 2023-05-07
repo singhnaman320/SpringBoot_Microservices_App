@@ -56,12 +56,12 @@ public class StudentController {
 		return new ResponseEntity<Student>(updateStudentDetails, HttpStatus.ACCEPTED);
 	}
 	
-	// 4. Delete Student by its roll
+	// 4. Delete Student by its Id
 	
-	@DeleteMapping("/students/{roll}")
-	public ResponseEntity<Student> deleteProductByIdHandler(@PathVariable("roll") Integer roll) throws StudentNotFoundException{
+	@DeleteMapping("/students/{Id}")
+	public ResponseEntity<Student> deleteStudentByIdHandler(@PathVariable("Id") Integer studentId) throws StudentNotFoundException{
 		
-		Student deleteStudent = studentService.deleteStudentByRoll(roll);
+		Student deleteStudent = studentService.deleteStudentById(studentId);
 		
 		return  new ResponseEntity<Student>(deleteStudent, HttpStatus.ACCEPTED);
 	}

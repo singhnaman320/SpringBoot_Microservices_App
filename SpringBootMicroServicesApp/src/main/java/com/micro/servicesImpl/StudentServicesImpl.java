@@ -58,7 +58,7 @@ public class StudentServicesImpl implements StudentServices{
 	public Student updateStudent(Student student) throws StudentNotFoundException {
 		// TODO Auto-generated method stub
 		
-		Optional<Student> opt= dao.findById(student.getRoll());
+		Optional<Student> opt= dao.findById(student.getStudentId());
 		
 		if(opt.isPresent()) {
 			
@@ -75,10 +75,10 @@ public class StudentServicesImpl implements StudentServices{
 	}
 
 	@Override
-	public Student deleteStudentByRoll(Integer roll) throws StudentNotFoundException {
+	public Student deleteStudentById(Integer studentId) throws StudentNotFoundException {
 		// TODO Auto-generated method stub
 		
-		Optional<Student> opt = dao.findById(roll);
+		Optional<Student> opt = dao.findById(studentId);
 		
 		if(opt.isPresent()) {
 			
@@ -90,7 +90,7 @@ public class StudentServicesImpl implements StudentServices{
 			
 		}else {
 			
-			throw new StudentNotFoundException("Unable to delete student details with given roll "+ roll);
+			throw new StudentNotFoundException("Unable to delete student details with given roll "+ studentId);
 		}
 	}
 
