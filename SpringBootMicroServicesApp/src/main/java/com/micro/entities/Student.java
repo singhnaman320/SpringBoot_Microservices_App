@@ -26,6 +26,11 @@ public class Student {
 		this.address = address;
 		this.marks = marks;
 	}
+
+	@Override
+	public String toString() {
+		return "Student [roll=" + roll + ", name=" + name + ", address=" + address + ", marks=" + marks + "]";
+	}
 	
 	
 }
