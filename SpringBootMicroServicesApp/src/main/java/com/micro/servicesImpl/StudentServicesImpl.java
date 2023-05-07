@@ -19,13 +19,26 @@ public class StudentServicesImpl implements StudentServices{
 	@Override
 	public Student registerStudent(Student student) throws StudentNotFoundException {
 		// TODO Auto-generated method stub
-		return null;
+		
+		boolean flag= true;
+		
+		if(flag) {
+			
+			Student saveStudent= dao.save(student);
+			
+			return saveStudent;
+			
+		}else {
+			
+			throw new StudentNotFoundException("Unable to register student");
+		}
+
 	}
 
 	@Override
 	public List<Student> getAllStudents() throws StudentNotFoundException {
 		// TODO Auto-generated method stub
-		return null;
+		
 	}
 
 	@Override
