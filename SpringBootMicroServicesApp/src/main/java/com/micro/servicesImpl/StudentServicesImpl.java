@@ -68,14 +68,28 @@ public class StudentServicesImpl implements StudentServices{
 			
 		}else {
 			
-			throw new StudentNotFoundException("Unable to update given product details");
+			throw new StudentNotFoundException("Unable to update given student details");
 		}
 	}
 
 	@Override
 	public Student deleteStudentByRoll(Integer roll) throws StudentNotFoundException {
 		// TODO Auto-generated method stub
-		return null;
+		
+		Optional<Student> opt = dao.findById(roll);
+		
+		if(opt.isPresent()) {
+			
+			Student existingStudent = opt.get();
+			
+			dao.delete(existingStudent);
+			
+			return existingStudent;
+			
+		}else {
+			
+			throw new StudentNotFoundException("Unable to delete student details with given roll "+ roll);
+		}
 	}
 
 	@Override
