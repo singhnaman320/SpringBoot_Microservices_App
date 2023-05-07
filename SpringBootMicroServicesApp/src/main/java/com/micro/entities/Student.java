@@ -18,6 +18,14 @@ public class Student {
 	public Student() {
 		super();
 	}
+
+	public Student(Integer roll, String name, String address, Integer marks) {
+		super();
+		this.roll = roll;
+		this.name = name;
+		this.address = address;
+		this.marks = marks;
+	}
 	
 	
 }
