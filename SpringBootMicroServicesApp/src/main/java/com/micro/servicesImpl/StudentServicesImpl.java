@@ -1,6 +1,7 @@
 package com.micro.servicesImpl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -54,7 +55,21 @@ public class StudentServicesImpl implements StudentServices{
 	@Override
 	public Student updateStudent(Student student) throws StudentNotFoundException {
 		// TODO Auto-generated method stub
-		return null;
+		
+		Optional<Student> opt= dao.findById(student.getRoll());
+		
+		if(opt.isPresent()) {
+			
+			//this save method perform 2 operation 1. insert 2 merge
+			
+			Student updatedStudent = dao.save(student);
+			
+			return updatedStudent;
+			
+		}else {
+			
+			throw new StudentNotFoundException("Unable to update given product details");
+		}
 	}
 
 	@Override
