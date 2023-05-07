@@ -26,6 +26,13 @@ public class Student {
 		this.address = address;
 		this.marks = marks;
 	}
+	
+	public Student(String name, String address, Integer marks) {
+		super();
+		this.name = name;
+		this.address = address;
+		this.marks = marks;
+	}
 
 	@Override
 	public String toString() {
