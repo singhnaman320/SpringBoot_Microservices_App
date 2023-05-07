@@ -67,5 +67,14 @@ public class StudentController {
 	}
 	
 	
+	// 5. Get Students by its name
+	
+	@GetMapping("/students/{name}")
+	public ResponseEntity<List<Student>> getStudentByNameHandler(@PathVariable("name") String name) throws StudentNotFoundException{
+		
+		List<Student> studentByName= studentService.getStudentByName(name); 
+		
+		return new ResponseEntity<List<Student>>(studentByName, HttpStatus.CREATED);
+	}
 	
 }
