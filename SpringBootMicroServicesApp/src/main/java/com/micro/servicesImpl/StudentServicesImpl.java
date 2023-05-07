@@ -39,6 +39,16 @@ public class StudentServicesImpl implements StudentServices{
 	public List<Student> getAllStudents() throws StudentNotFoundException {
 		// TODO Auto-generated method stub
 		
+		List<Student> allStudents= dao.findAll();
+		
+		if(allStudents.isEmpty()) {
+			
+			throw new StudentNotFoundException("Unable to get all students details.");
+			
+		}else {
+			
+			return allStudents;
+		}
 	}
 
 	@Override
