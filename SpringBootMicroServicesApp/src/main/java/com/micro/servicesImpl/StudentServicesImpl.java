@@ -2,14 +2,19 @@ package com.micro.servicesImpl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.micro.entities.Student;
 import com.micro.exceptions.StudentNotFoundException;
+import com.micro.repositories.StudentJpaDao;
 import com.micro.services.StudentServices;
 
 @Service
 public class StudentServicesImpl implements StudentServices{
+	
+	@Autowired
+	private StudentJpaDao dao;
 
 	@Override
 	public Student registerStudent(Student student) throws StudentNotFoundException {
