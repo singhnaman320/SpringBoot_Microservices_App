@@ -1,7 +1,9 @@
 package com.micro.servicesImpl;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -95,7 +97,18 @@ public class StudentServicesImpl implements StudentServices{
 	@Override
 	public List<Student> getStudentByName(String name) throws StudentNotFoundException {
 		// TODO Auto-generated method stub
-		return null;
+		
+		List<Student> categoryList= dao.findAll().stream().filter(s->Objects.equals(s.getName(), name)).collect(Collectors.toList());
+		
+		if(categoryList.size() !=0) {
+			
+			return categoryList;
+
+		}else {
+			
+			throw new StudentNotFoundException("Unable to get student details by his/her name");
+
+		}
 	}
 
 }
