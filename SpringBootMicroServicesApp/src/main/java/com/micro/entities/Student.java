@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class Student {
@@ -11,8 +13,15 @@ public class Student {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer roll;
+	
+	@NotNull(message = "Student name cannot be null")
 	private String name;
+	
+	@NotNull(message = "Student address cannot be null")
 	private String address;
+	
+	@NotNull(message = "Student marks cannot be null")
+	@Min(value = 0, message = "Student marks can not be negative")
 	private Integer marks;
 	
 	public Student() {
