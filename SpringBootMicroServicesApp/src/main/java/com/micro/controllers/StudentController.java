@@ -36,5 +36,16 @@ public class StudentController {
 		
 	}
 	
+	// 2. Getting all the Students
+	
+	@GetMapping("/students")
+	public ResponseEntity<List<Student>> getAllStudentsHandler() throws StudentNotFoundException{
+		
+		List<Student> gettingList= studentService.getAllStudents();
+		
+		return new ResponseEntity<List<Student>>(gettingList, HttpStatus.OK);
+	}
+	
+	
 	
 }
