@@ -79,7 +79,7 @@ public class StudentController {
 	
 	// 6. Get student by Id
 	
-	@GetMapping("/students/{Id}")
+	@GetMapping("/getstudents/{Id}")
 	public ResponseEntity<Student> getStudentByIdHandler(@PathVariable("Id") Integer studentId) throws StudentNotFoundException{
 		
 		Student getParticularStudent = studentService.getStudentById(studentId);
