@@ -115,18 +115,8 @@ public class StudentServicesImpl implements StudentServices{
 	public Student getStudentById(Integer studentId) throws StudentNotFoundException {
 		// TODO Auto-generated method stub
 		
-		Optional<Student> optional= dao.findById(studentId);
+		return dao.findById(studentId).orElseThrow(()-> new StudentNotFoundException("Unable to get student details with given Id "+ studentId));
 		
-		if(optional.isPresent()) {
-			
-			Student existingStudent = optional.get();
-			
-			return existingStudent;
-			
-		}else {
-			
-			throw new StudentNotFoundException("Unable to get student details with given Id "+ studentId);
-		}
 	}
 	
 }

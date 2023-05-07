@@ -77,4 +77,14 @@ public class StudentController {
 		return new ResponseEntity<List<Student>>(studentByName, HttpStatus.CREATED);
 	}
 	
+	// 6. Get student by Id
+	
+	@GetMapping("/students/{Id}")
+	public ResponseEntity<Student> getStudentByIdHandler(@PathVariable("Id") Integer studentId) throws StudentNotFoundException{
+		
+		Student getParticularStudent = studentService.getStudentById(studentId);
+		
+		return new ResponseEntity<Student>(getParticularStudent, HttpStatus.OK);
+	}
+	
 }
