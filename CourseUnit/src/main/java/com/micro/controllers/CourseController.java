@@ -14,9 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.micro.entities.Course;
-import com.micro.entities.Student;
 import com.micro.exceptions.CourseNotFoundException;
-import com.micro.exceptions.StudentNotFoundException;
 import com.micro.services.CourseService;
 
 import jakarta.validation.Valid;
@@ -78,7 +76,7 @@ public class CourseController {
 		return new ResponseEntity<List<Course>>(courseByName, HttpStatus.CREATED);
 	}
 	
-	// 6. Get student by Id
+	// 6. Get Course by Id
 	
 	@GetMapping("/getcourses/{Id}")
 	public ResponseEntity<Course> getCourseByIdHandler(@PathVariable("Id") Integer courseId) throws CourseNotFoundException{
