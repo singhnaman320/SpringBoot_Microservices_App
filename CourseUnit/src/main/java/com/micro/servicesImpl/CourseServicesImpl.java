@@ -38,7 +38,16 @@ public class CourseServicesImpl implements CourseService{
 	public List<Course> getAllCourses() throws CourseNotFoundException {
 		// TODO Auto-generated method stub
 		
-		return null;
+		List<Course> allCourses= dao.findAll();
+		
+		if(allCourses.isEmpty()) {
+			
+			throw new CourseNotFoundException("Unable to get all courses details.");
+			
+		}else {
+			
+			return allCourses;
+		}
 	}
 
 	@Override
