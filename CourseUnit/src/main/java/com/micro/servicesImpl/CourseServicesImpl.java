@@ -1,12 +1,15 @@
 package com.micro.servicesImpl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.micro.entities.Course;
+import com.micro.entities.Student;
 import com.micro.exceptions.CourseNotFoundException;
+import com.micro.exceptions.StudentNotFoundException;
 import com.micro.repositories.CourseJpaDao;
 import com.micro.services.CourseService;
 
@@ -53,7 +56,21 @@ public class CourseServicesImpl implements CourseService{
 	@Override
 	public Course updateCourse(Course course) throws CourseNotFoundException {
 		// TODO Auto-generated method stub
-		return null;
+		
+		Optional<Course> opt= dao.findById(course.getCourseId());
+		
+		if(opt.isPresent()) {
+			
+			//this save method perform 2 operation 1. insert 2 merge
+			
+			Course updatedCourse = dao.save(course);
+			
+			return updatedCourse;
+			
+		}else {
+			
+			throw new CourseNotFoundException("Unable to update given student details");
+		}
 	}
 
 	@Override
