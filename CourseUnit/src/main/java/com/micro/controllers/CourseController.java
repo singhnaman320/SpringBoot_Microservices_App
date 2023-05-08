@@ -78,5 +78,13 @@ public class CourseController {
 		return new ResponseEntity<List<Course>>(courseByName, HttpStatus.CREATED);
 	}
 	
+	// 6. Get student by Id
 	
+	@GetMapping("/getcourses/{Id}")
+	public ResponseEntity<Course> getCourseByIdHandler(@PathVariable("Id") Integer courseId) throws CourseNotFoundException{
+			
+		Course getParticularCourse = courseService.getCourseById(courseId);
+			
+		return new ResponseEntity<Course>(getParticularCourse, HttpStatus.OK);
+	}
 }
