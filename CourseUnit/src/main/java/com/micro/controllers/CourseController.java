@@ -58,7 +58,7 @@ public class CourseController {
 		return new ResponseEntity<Course>(updateCourseDetails, HttpStatus.ACCEPTED);
 	}
 	
-	// 4. Delete Student by its Id
+	// 4. Delete Course by its Id
 	
 	@DeleteMapping("/courses/{Id}")
 	public ResponseEntity<Course> deleteCourseByIdHandler(@PathVariable("Id") Integer courseId) throws CourseNotFoundException{
@@ -67,4 +67,16 @@ public class CourseController {
 			
 		return  new ResponseEntity<Course>(deleteCourse, HttpStatus.ACCEPTED);
 	}
+	
+	// 5. Get Course by its name
+	
+	@GetMapping("/courses/{name}")
+	public ResponseEntity<List<Course>> getCourseByNameHandler(@PathVariable("name") String name) throws CourseNotFoundException{
+			
+		List<Course> courseByName= courseService.getCourseByName(name); 
+			
+		return new ResponseEntity<List<Course>>(courseByName, HttpStatus.CREATED);
+	}
+	
+	
 }
