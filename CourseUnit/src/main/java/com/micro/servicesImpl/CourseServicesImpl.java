@@ -2,19 +2,39 @@ package com.micro.servicesImpl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.micro.entities.Course;
+import com.micro.entities.Student;
 import com.micro.exceptions.CourseNotFoundException;
+import com.micro.exceptions.StudentNotFoundException;
+import com.micro.repositories.CourseJpaDao;
+import com.micro.repositories.StudentJpaDao;
 import com.micro.services.CourseService;
 
 @Service
 public class CourseServicesImpl implements CourseService{
 
+	@Autowired
+	private CourseJpaDao dao;
+	
 	@Override
 	public Course registerCourse(Course course) throws CourseNotFoundException {
 		// TODO Auto-generated method stub
-		return null;
+		
+		boolean flag= true;
+		
+		if(flag) {
+			
+			Course saveCourse= dao.save(course);
+			
+			return saveCourse;
+			
+		}else {
+			
+			throw new CourseNotFoundException("Unable to register course");
+		}
 	}
 
 	@Override
@@ -46,5 +66,4 @@ public class CourseServicesImpl implements CourseService{
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 }
