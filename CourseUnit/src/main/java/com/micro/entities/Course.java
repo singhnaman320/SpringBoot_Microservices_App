@@ -32,6 +32,13 @@ public class Course {
 		this.courseName = courseName;
 		this.courseDuration = courseDuration;
 	}
+
+	public Course(@NotNull(message = "Course name cannot be null") String courseName,
+			@NotNull(message = "course duration cannot be null") @Min(value = 1, message = "Course duration can not be less than 1 year") Integer courseDuration) {
+		super();
+		this.courseName = courseName;
+		this.courseDuration = courseDuration;
+	}
 	
 	
 }
