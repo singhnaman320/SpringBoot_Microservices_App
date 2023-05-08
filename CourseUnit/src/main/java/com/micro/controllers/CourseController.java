@@ -35,9 +35,9 @@ public class CourseController {
 			
 	}
 	
-	// 2. Getting all the Students
+	// 2. Getting all the Courses
 	
-	@GetMapping("/students")
+	@GetMapping("/courses")
 	public ResponseEntity<List<Course>> getAllCoursesHandler() throws CourseNotFoundException{
 			
 		List<Course> gettingList= courseService.getAllCourses();
