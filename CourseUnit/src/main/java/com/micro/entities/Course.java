@@ -18,6 +18,6 @@ public class Course {
 	private String courseName;
 	
 	@NotNull(message = "course duration cannot be null")
-	@Min(value = 3, message = "Course duration can not be less than 3 months")
+	@Min(value = 1, message = "Course duration can not be less than 1 year")
 	private Integer courseDuration;
 }
