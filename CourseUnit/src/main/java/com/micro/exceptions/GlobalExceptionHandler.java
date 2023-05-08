@@ -16,8 +16,8 @@ public class GlobalExceptionHandler {
 	// For Customizing our error body as a response if any error occurs then we make little changes
 	// WebRequest req--->To print Description
 			
-	@ExceptionHandler(StudentNotFoundException.class)
-	public ResponseEntity<CustomizeError> exceptionHandler(StudentNotFoundException bnf, WebRequest req){
+	@ExceptionHandler(CourseNotFoundException.class)
+	public ResponseEntity<CustomizeError> exceptionHandler(CourseNotFoundException bnf, WebRequest req){
 				
 		CustomizeError customizeErr= new CustomizeError(LocalDateTime.now(), bnf.getMessage(), req.getDescription(false));
 				
