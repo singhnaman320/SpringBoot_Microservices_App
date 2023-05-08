@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.micro.entities.Course;
+import com.micro.entities.Student;
 import com.micro.exceptions.CourseNotFoundException;
 import com.micro.exceptions.StudentNotFoundException;
 import com.micro.repositories.CourseJpaDao;
@@ -83,7 +84,21 @@ public class CourseServicesImpl implements CourseService{
 	@Override
 	public Course deleteCourseById(Integer courseId) throws CourseNotFoundException {
 		// TODO Auto-generated method stub
-		return null;
+		
+		Optional<Course> opt = dao.findById(courseId);
+		
+		if(opt.isPresent()) {
+			
+			Course existingCourse = opt.get();
+			
+			dao.delete(existingCourse);
+			
+			return existingCourse;
+			
+		}else {
+			
+			throw new CourseNotFoundException("Unable to delete course details with given Id "+ courseId);
+		}
 	}
 
 	@Override
