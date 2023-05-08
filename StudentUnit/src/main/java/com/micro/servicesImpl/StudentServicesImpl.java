@@ -98,11 +98,11 @@ public class StudentServicesImpl implements StudentServices{
 	public List<Student> getStudentByName(String name) throws StudentNotFoundException {
 		// TODO Auto-generated method stub
 		
-		List<Student> categoryList= dao.findAll().stream().filter(s->Objects.equals(s.getName(), name)).collect(Collectors.toList());
+		List<Student> studentList= dao.findAll().stream().filter(s->Objects.equals(s.getName(), name)).collect(Collectors.toList());
 		
-		if(categoryList.size() !=0) {
+		if(studentList.size() !=0) {
 			
-			return categoryList;
+			return studentList;
 
 		}else {
 			

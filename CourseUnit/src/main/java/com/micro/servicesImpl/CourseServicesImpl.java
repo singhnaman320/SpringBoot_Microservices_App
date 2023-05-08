@@ -1,13 +1,17 @@
 package com.micro.servicesImpl;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.micro.entities.Course;
+import com.micro.entities.Student;
 import com.micro.exceptions.CourseNotFoundException;
+import com.micro.exceptions.StudentNotFoundException;
 import com.micro.repositories.CourseJpaDao;
 import com.micro.services.CourseService;
 
@@ -102,6 +106,20 @@ public class CourseServicesImpl implements CourseService{
 	@Override
 	public List<Course> getCourseByName(String name) throws CourseNotFoundException {
 		// TODO Auto-generated method stub
-		return null;
+		
+		List<Course> courseList= dao.findAll()
+				.stream()
+				.filter(c->Objects.equals(c.getCourseName(), name))
+				.collect(Collectors.toList());
+		
+		if(courseList.size() !=0) {
+			
+			return courseList;
+
+		}else {
+			
+			throw new CourseNotFoundException("Unable to get course details by its name");
+
+		}
 	}
 }
