@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.micro.entities.Course;
 import com.micro.exceptions.CourseNotFoundException;
+import com.micro.exceptions.StudentNotFoundException;
 import com.micro.repositories.CourseJpaDao;
 import com.micro.services.CourseService;
 
@@ -74,7 +75,9 @@ public class CourseServicesImpl implements CourseService{
 	@Override
 	public Course getCourseById(Integer courseId) throws CourseNotFoundException {
 		// TODO Auto-generated method stub
-		return null;
+		
+		return dao.findById(courseId)
+				.orElseThrow(()-> new CourseNotFoundException("Unable to get course details with given Id "+ courseId));
 	}
 
 	@Override
