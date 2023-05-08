@@ -20,4 +20,10 @@ public class Course {
 	@NotNull(message = "course duration cannot be null")
 	@Min(value = 1, message = "Course duration can not be less than 1 year")
 	private Integer courseDuration;
+
+	public Course() {
+		super();
+	}
+	
+	
 }
