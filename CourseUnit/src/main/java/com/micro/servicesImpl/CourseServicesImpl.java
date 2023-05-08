@@ -69,7 +69,7 @@ public class CourseServicesImpl implements CourseService{
 			
 		}else {
 			
-			throw new CourseNotFoundException("Unable to update given student details");
+			throw new CourseNotFoundException("Unable to update given course details");
 		}
 	}
 
