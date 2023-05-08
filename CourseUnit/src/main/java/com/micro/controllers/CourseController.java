@@ -24,7 +24,7 @@ public class CourseController {
 	// 1. Registering Courses
 	
 		@PostMapping("/courses")
-		public ResponseEntity<Course> registerStudentHandler(@Valid @RequestBody Course course) throws CourseNotFoundException{
+		public ResponseEntity<Course> registerCourseHandler(@Valid @RequestBody Course course) throws CourseNotFoundException{
 			
 			Course registerCourse = courseService.registerCourse(course);
 			
