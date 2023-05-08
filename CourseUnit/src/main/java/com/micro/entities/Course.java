@@ -39,6 +39,12 @@ public class Course {
 		this.courseName = courseName;
 		this.courseDuration = courseDuration;
 	}
+
+	@Override
+	public String toString() {
+		return "Course [courseId=" + courseId + ", courseName=" + courseName + ", courseDuration=" + courseDuration
+				+ "]";
+	}
 	
 	
 }
