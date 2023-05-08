@@ -17,5 +17,7 @@ public class Course {
 	@NotNull(message = "Course name cannot be null")
 	private String courseName;
 	
-	
+	@NotNull(message = "course duration cannot be null")
+	@Min(value = 3, message = "Course duration can not be less than 3 months")
+	private Integer courseDuration;
 }
