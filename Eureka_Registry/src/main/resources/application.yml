@@ -1,3 +1,4 @@
+#Name of Eureka_Registery application
 spring:
   application:
     name: eureka-discovery-service
