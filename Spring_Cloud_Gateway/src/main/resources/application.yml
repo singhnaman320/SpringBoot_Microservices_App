@@ -10,14 +10,14 @@ spring:
     gateway:
       routes:
       - id: studentModule
-        uri: http://localhost:8088
+        uri: lb://student-service      #we have to discover micro service server from eureka client so we will replace http://localhost:8088 with lb://student-service
         predicates:
-        - Path=/studentDetails/**  #Anything with this uri move to above route
+        - Path=/studentDetails/**      #Anything with this uri move to above route
         
-      - id: courseModule
-        uri: http://localhost:8084
+      - id: courseModule               #similar as above: lb://course-service
+        uri: lb://course-service   
         predicates:
-        - Path=/courseDetails/**   #Anything with this uri move to above route
+        - Path=/courseDetails/**       #Anything with this uri move to above route
  
 #For Eureka
 #Whenever we run/deploy this course unit it will register itself to given url             
