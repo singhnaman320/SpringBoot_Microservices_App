@@ -15,4 +15,4 @@ eureka:
     fetchRegistry: false
     
     serviceUrl:
-      defaultZone: http://localhost:8085/eureka 
+      defaultZone: http://localhost:8085/eureka #when we want to open console so it will open using this url
