@@ -12,7 +12,7 @@ spring:
       - id: studentModule
         uri: http://localhost:8088
         predicates:
-        - Path=/students/**  #Anything with this uri move to above route
+        - Path=/studentDetails/**  #Anything with this uri move to above route
         
       - id: courseModule
         uri: http://localhost:8084
