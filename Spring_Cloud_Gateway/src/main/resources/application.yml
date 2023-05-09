@@ -1,5 +1,6 @@
+# Now we will access all the microservices on this port
 server:
-  port: 8090 # Now we will access all the microservices on this port
+  port: 8090
 
 spring:
   application:
@@ -17,7 +18,8 @@ spring:
         uri: http://localhost:8084
         predicates:
         - Path=/course/**   #Anything with this uri move to above route
-        filters:
-        - name: Requestsize
-          args:
-            maxSize: 5000000 #the request size can not be more than tis byte(default)
+        
+#        filters:
+#        - name: Requestsize
+#          args:
+#            maxSize: 5000000  the request size can not be more than tis byte(default)
