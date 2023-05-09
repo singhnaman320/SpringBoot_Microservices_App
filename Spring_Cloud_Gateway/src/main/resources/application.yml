@@ -1,5 +1,5 @@
 server:
-  port: 8090
+  port: 8090 # Now we will access all the microservices on this port
 
 spring:
   application:
