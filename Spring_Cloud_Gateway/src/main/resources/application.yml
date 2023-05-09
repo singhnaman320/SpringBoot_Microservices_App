@@ -18,7 +18,14 @@ spring:
         uri: http://localhost:8084
         predicates:
         - Path=/courseDetails/**   #Anything with this uri move to above route
-        
+ 
+#For Eureka
+#Whenever we run/deploy this course unit it will register itself to given url             
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8085/eureka     
+
 #        filters:
 #        - name: Requestsize
 #          args:
