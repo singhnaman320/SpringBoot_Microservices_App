@@ -7,7 +7,8 @@ spring:
 server:
   port: 8085
   
-#  
+#In production we have cluster of eureka so by default it register itself as well but here we dont want cluster and also we are 
+#running on local host so we made registerWithEureka: false
 eureka:
   client:
     registerWithEureka: false
