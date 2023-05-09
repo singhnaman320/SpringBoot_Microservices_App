@@ -15,6 +15,7 @@
 	<description>Project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
+		<spring-cloud.version>2022.0.2</spring-cloud.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -51,7 +52,25 @@
     		<artifactId>hibernate-core</artifactId>
     		<version>5.0.7.Final</version>
 		</dependency>-->
+		
+		<!-- For Eureka-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+		</dependency>
 	</dependencies>
+	<!-- For Eureka-->
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<build>
 		<plugins>
