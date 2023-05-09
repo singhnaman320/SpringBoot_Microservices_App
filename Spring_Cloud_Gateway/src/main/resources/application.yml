@@ -20,4 +20,4 @@ spring:
         filters:
         - name: Requestsize
           args:
-            maxSize: 5000000 #the request size can not be more than tis byte
+            maxSize: 5000000 #the request size can not be more than tis byte(default)
