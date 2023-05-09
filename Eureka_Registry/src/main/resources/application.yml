@@ -3,9 +3,11 @@ spring:
   application:
     name: eureka-discovery-service
 
+#Eureka_Registery server run on given port
 server:
   port: 8085
   
+#  
 eureka:
   client:
     registerWithEureka: false
