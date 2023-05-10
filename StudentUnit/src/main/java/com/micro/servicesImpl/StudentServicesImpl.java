@@ -5,10 +5,13 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.micro.entities.Course;
 import com.micro.entities.Student;
+import com.micro.entities.StudentDetails;
 import com.micro.exceptions.StudentNotFoundException;
 import com.micro.repositories.StudentJpaDao;
 import com.micro.services.StudentServices;
@@ -18,6 +21,9 @@ public class StudentServicesImpl implements StudentServices{
 	
 	@Autowired
 	private StudentJpaDao dao;
+	
+	@Autowired 
+	private ApiCall apiCall;   // using restTemplate
 
 	@Override
 	public Student registerStudent(Student student) throws StudentNotFoundException {
@@ -112,11 +118,27 @@ public class StudentServicesImpl implements StudentServices{
 	}
 
 	@Override
-	public Student getStudentById(Integer studentId) throws StudentNotFoundException {
+	public StudentDetails getStudentById(Integer studentId) throws StudentNotFoundException {
 		// TODO Auto-generated method stub
 		
-		return dao.findById(studentId).orElseThrow(()-> new StudentNotFoundException("Unable to get student details with given Id "+ studentId));
+		// getting student from table by passing id
+				Student student = dao.findById(studentId).orElse(null);
+				
+				//getting course from course microservice by call API
+				Course course = apiCall.getCourseDetails(student.getCourseId());
+				
+				StudentDetails studentDetails = new StudentDetails();
+				BeanUtils.copyProperties(student, studentDetails);
+				studentDetails.setCourse(course);
+				return studentDetails;
 		
+	}
+
+	@Override
+	public StudentDetails getByIdUsingWebClient(Integer Id) throws StudentNotFoundException {
+		// TODO Auto-generated method stub
+		
+		return null;
 	}
 	
 }

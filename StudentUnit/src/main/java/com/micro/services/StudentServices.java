@@ -14,7 +14,7 @@ public interface StudentServices {
 	
 	public Student updateStudent(Student student)throws StudentNotFoundException;
 	
-	public Student getStudentById(Integer studentId)throws StudentNotFoundException;
+	public StudentDetails getStudentById(Integer studentId)throws StudentNotFoundException;
 	
 	public Student deleteStudentById(Integer studentId)throws StudentNotFoundException;
 	
