@@ -4,7 +4,7 @@ package com.micro.entities;
 public class StudentDetails {
 
 	private Integer studentId;
-	private String studentName;
+	private String name;
 	private String mobileNumber;
 	private Integer courseId;
 	private Course course;
@@ -13,18 +13,18 @@ public class StudentDetails {
 		super();
 	}
 
-	public StudentDetails(Integer studentId, String studentName, String mobileNumber, Integer courseId, Course course) {
+	public StudentDetails(Integer studentId, String name, String mobileNumber, Integer courseId, Course course) {
 		super();
 		this.studentId = studentId;
-		this.studentName = studentName;
+		this.name = name;
 		this.mobileNumber = mobileNumber;
 		this.courseId = courseId;
 		this.course = course;
 	}
 
-	public StudentDetails(String studentName, String mobileNumber, Integer courseId, Course course) {
+	public StudentDetails(String name, String mobileNumber, Integer courseId, Course course) {
 		super();
-		this.studentName = studentName;
+		this.name = name;
 		this.mobileNumber = mobileNumber;
 		this.courseId = courseId;
 		this.course = course;
@@ -32,8 +32,8 @@ public class StudentDetails {
 
 	@Override
 	public String toString() {
-		return "StudentDetails [studentId=" + studentId + ", studentName=" + studentName + ", mobileNumber="
-				+ mobileNumber + ", courseId=" + courseId + ", course=" + course + "]";
+		return "StudentDetails [studentId=" + studentId + ", name=" + name + ", mobileNumber=" + mobileNumber
+				+ ", courseId=" + courseId + ", course=" + course + "]";
 	}
 
 	public Integer getStudentId() {
@@ -44,12 +44,12 @@ public class StudentDetails {
 		this.studentId = studentId;
 	}
 
-	public String getStudentName() {
-		return studentName;
+	public String getName() {
+		return name;
 	}
 
-	public void setStudentName(String studentName) {
-		this.studentName = studentName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getMobileNumber() {
@@ -75,4 +75,5 @@ public class StudentDetails {
 	public void setCourse(Course course) {
 		this.course = course;
 	}
+	
 }
