@@ -13,8 +13,9 @@ public class StudentUnitApplication {
 		SpringApplication.run(StudentUnitApplication.class, args);
 	}
 
+	// Annotating bean for Rest Template
 	@Bean
-	@LoadBalanced
+	@LoadBalanced  // It tells that you have to resolve the application name using Eureka Server
 	RestTemplate restTemplate() {
 	    return new RestTemplate();
 	}

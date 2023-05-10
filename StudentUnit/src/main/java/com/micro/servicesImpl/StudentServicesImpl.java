@@ -122,14 +122,14 @@ public class StudentServicesImpl implements StudentServices{
 		// TODO Auto-generated method stub
 		
 		// getting student from table by passing id
-				Student student = dao.findById(studentId).orElse(null);
+				Student student = dao.findById(studentId).orElseThrow(()->new StudentNotFoundException("Unable to delete student details with given Id "+ studentId));
 				
 				//getting course from course microservice by call API
 				Course course = apiCall.getCourseDetails(student.getCourseId());
 				
 				StudentDetails studentDetails = new StudentDetails();
-				BeanUtils.copyProperties(student, studentDetails);
-				studentDetails.setCourse(course);
+				BeanUtils.copyProperties(student, studentDetails); // It copy the properties from one object to another object
+				studentDetails.setCourse(course);  // setting the course got from api call above
 				return studentDetails;
 		
 	}

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.micro.entities.Student;
+import com.micro.entities.StudentDetails;
 import com.micro.exceptions.StudentNotFoundException;
 import com.micro.services.StudentServices;
 
@@ -82,11 +83,11 @@ public class StudentController {
 	// 6. Get student by Id
 	
 	@GetMapping("/getstudents/{Id}")
-	public ResponseEntity<Student> getStudentByIdHandler(@PathVariable("Id") Integer studentId) throws StudentNotFoundException{
+	public ResponseEntity<StudentDetails> getStudentByIdHandler(@PathVariable("Id") Integer studentId) throws StudentNotFoundException{
 		
-		Student getParticularStudent = studentService.getStudentById(studentId);
+		StudentDetails getParticularStudent = studentService.getStudentById(studentId);
 		
-		return new ResponseEntity<Student>(getParticularStudent, HttpStatus.OK);
+		return new ResponseEntity<StudentDetails>(getParticularStudent, HttpStatus.OK);
 	}
 	
 }
