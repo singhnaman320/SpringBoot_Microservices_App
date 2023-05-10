@@ -3,6 +3,7 @@ package com.micro.services;
 import java.util.List;
 
 import com.micro.entities.Student;
+import com.micro.entities.StudentDetails;
 import com.micro.exceptions.StudentNotFoundException;
 
 public interface StudentServices {
@@ -18,4 +19,6 @@ public interface StudentServices {
 	public Student deleteStudentById(Integer studentId)throws StudentNotFoundException;
 	
 	public List<Student> getStudentByName(String name)throws StudentNotFoundException;
+	
+	public StudentDetails getByIdUsingWebClient(Integer Id)throws StudentNotFoundException;
 }
