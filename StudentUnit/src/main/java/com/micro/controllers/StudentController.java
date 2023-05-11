@@ -81,6 +81,7 @@ public class StudentController {
 	}
 	
 	// 6. Get student by Id
+	// For Rest Template
 	
 	@GetMapping("/getstudents/{Id}")
 	public ResponseEntity<StudentDetails> getStudentByIdHandler(@PathVariable("Id") Integer studentId) throws StudentNotFoundException{
