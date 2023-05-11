@@ -20,5 +20,5 @@ public interface StudentServices {
 	
 	public List<Student> getStudentByName(String name)throws StudentNotFoundException;
 	
-	public StudentDetails getByIdUsingWebClient(Integer Id)throws StudentNotFoundException;
+	public StudentDetails getByIdUsingWebClient(Integer studentId)throws StudentNotFoundException;
 }
