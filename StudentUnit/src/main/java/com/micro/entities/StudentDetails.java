@@ -3,7 +3,8 @@ package com.micro.entities;
 // It is created so that we can access another microservice course from student microservice
 public class StudentDetails {
 
-	private Integer studentId;
+	// Variable name must be same as main course and student unit to get proper response otherwise you will get null
+	private Integer studentId;  
 	private String name;
 	private String mobileNumber;
 	private Integer courseId;
