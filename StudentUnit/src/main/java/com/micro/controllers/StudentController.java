@@ -2,8 +2,11 @@ package com.micro.controllers;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,6 +30,8 @@ public class StudentController {
 
 	@Autowired
 	private StudentServices studentService;
+	
+	private static final Logger logger = LoggerFactory.getLogger(StudentController.class);
 	
 	// 1. Registering Students
 	
@@ -91,4 +96,14 @@ public class StudentController {
 		return new ResponseEntity<StudentDetails>(getParticularStudent, HttpStatus.OK);
 	}
 	
+	// 7. For web client
+	
+	@GetMapping("/webClient/{Id}")
+	public ResponseEntity<StudentDetails> getByIdUsingWebClientHandler(@PathVariable("Id") Integer Id) throws StudentNotFoundException{
+		
+		logger.info("/webClient/**");
+		StudentDetails getParticularStudent = studentService.getByIdUsingWebClient(Id);
+		
+		return new ResponseEntity<StudentDetails>(getParticularStudent, HttpStatus.OK);
+	}
 }
