@@ -29,7 +29,7 @@ public class ApiCallUsingWebClient {
 		
 		logger.info("calling course microservice API using Web-Client");
 			
-	    return loadBalancedWebClientBuilder.build().get().uri(courseMisroserviceBaseURL + "/courseDetails/getcourses/{courseId}" + courseId)
+	    return loadBalancedWebClientBuilder.build().get().uri(courseMisroserviceBaseURL + "/courseDetails/getcourses/" + courseId)
 	    		.retrieve().bodyToMono(Course.class);
 	}
 	

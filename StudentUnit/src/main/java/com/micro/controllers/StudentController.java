@@ -5,6 +5,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
@@ -26,6 +27,7 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/studentDetails")
+@RefreshScope
 public class StudentController {
 
 	@Autowired
@@ -101,7 +103,7 @@ public class StudentController {
 	@GetMapping("/webClient/{Id}")
 	public ResponseEntity<StudentDetails> getByIdUsingWebClientHandler(@PathVariable("Id") Integer Id) throws StudentNotFoundException{
 		
-		logger.info("/webClient/**");
+		logger.info("/webClient/{Id}");
 		StudentDetails getParticularStudent = studentService.getByIdUsingWebClient(Id);
 		
 		return new ResponseEntity<StudentDetails>(getParticularStudent, HttpStatus.OK);
