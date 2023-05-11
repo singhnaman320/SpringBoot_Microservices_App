@@ -125,15 +125,15 @@ public class StudentServicesImpl implements StudentServices{
 		// TODO Auto-generated method stub
 		
 		// getting student from table by passing id
-				Student student = dao.findById(studentId).orElseThrow(()->new StudentNotFoundException("Unable to delete student details with given Id "+ studentId));
+		Student student = dao.findById(studentId).orElseThrow(()->new StudentNotFoundException("Unable to delete student details with given Id "+ studentId));
 				
-				//getting course from course microservice by call API
-				Course course = apiCall.getCourseDetails(student.getCourseId());
+		//getting course from course microservice by call API
+		Course course = apiCall.getCourseDetails(student.getCourseId());
 				
-				StudentDetails studentDetails = new StudentDetails();
-				BeanUtils.copyProperties(student, studentDetails); // It copy the properties from one object to another object
-				studentDetails.setCourse(course);  // setting the course got from api call above
-				return studentDetails;
+		StudentDetails studentDetails = new StudentDetails();
+		BeanUtils.copyProperties(student, studentDetails); // It copy the properties from one object to another object
+		studentDetails.setCourse(course);  // setting the course got from api call above
+		return studentDetails;
 		
 	}
 
@@ -141,7 +141,19 @@ public class StudentServicesImpl implements StudentServices{
 	public StudentDetails getByIdUsingWebClient(Integer Id) throws StudentNotFoundException {
 		// TODO Auto-generated method stub
 		
-		return null;
+		// getting student from table by passing id
+		Student s = studentRepository.findById(id).orElse(null);
+				
+		//getting course from course microservice by call API
+		Mono<Course> courseMono = apiCallUsingWebClient.getCourseDetails(s.getCourseId());
+		Course course = courseMono.block();
+				
+		StudentDetail sd = new StudentDetail();
+		
+		// copying properties from student to studentdetails object
+		BeanUtils.copyProperties(s, sd);
+		sd.setCourse(course);
+		return sd;
 	}
 	
 }
