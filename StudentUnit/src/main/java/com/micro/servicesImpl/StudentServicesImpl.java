@@ -24,6 +24,9 @@ public class StudentServicesImpl implements StudentServices{
 	
 	@Autowired 
 	private ApiCall apiCall;   // using restTemplate
+	
+	@Autowired 
+	private ApiCallUsingWebClient apiCallUsingWebClient; // using webClient
 
 	@Override
 	public Student registerStudent(Student student) throws StudentNotFoundException {
