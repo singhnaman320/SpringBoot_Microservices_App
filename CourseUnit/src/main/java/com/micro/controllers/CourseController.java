@@ -83,7 +83,9 @@ public class CourseController {
 	@GetMapping("/getcourses/{Id}")
 	public ResponseEntity<Course> getCourseByIdHandler(@PathVariable("Id") Integer courseId) throws CourseNotFoundException{
 		
-		// Added try-catch to check circuit breaker
+		// Added try-catch to check circuit breaker: Check: http://localhost:8090/studentDetails/getstudents/102 when you hit 
+		//request tw0-three times then you will see default course defined in fallback and other time you will get course details
+		//from database after 10sec as defined in application.properties
 		try {
 			
 			Thread.sleep(2000);
