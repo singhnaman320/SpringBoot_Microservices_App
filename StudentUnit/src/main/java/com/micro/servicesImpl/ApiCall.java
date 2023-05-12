@@ -6,6 +6,8 @@ import org.springframework.web.client.RestTemplate;
 
 import com.micro.entities.Course;
 
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+
 @Service
 public class ApiCall {
 
@@ -14,6 +16,8 @@ public class ApiCall {
 	
 	private static final String courseMicroserviceBaseURL = "http://course-service";
 	
+	// When course microservice is not sending response or being delayed then fallback method will be called
+	@CircuitBreaker(name = "circuitBreaker", fallbackMethod = "fallback")
 	public Course getCourseDetails(Integer courseId) {
 		
 		Course course = restTemplate.getForObject(courseMicroserviceBaseURL + "/courseDetails/getcourses/{courseId}", 
