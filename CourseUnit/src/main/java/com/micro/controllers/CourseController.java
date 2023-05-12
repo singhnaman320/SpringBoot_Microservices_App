@@ -82,7 +82,17 @@ public class CourseController {
 	
 	@GetMapping("/getcourses/{Id}")
 	public ResponseEntity<Course> getCourseByIdHandler(@PathVariable("Id") Integer courseId) throws CourseNotFoundException{
+		
+		// Added try-catch to check circuit breaker
+		try {
 			
+			Thread.sleep(2000);
+			
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
+		
 		Course getParticularCourse = courseService.getCourseById(courseId);
 			
 		return new ResponseEntity<Course>(getParticularCourse, HttpStatus.OK);
