@@ -20,7 +20,7 @@ public class ApiCall {
 	
 	private static final String courseMicroserviceBaseURL = "http://course-service";
 	
-	// When course microservice is not sending response or being delayed then fallback method displayed below will be called 
+	// When course microservice is not sending response or being delayed then fallback method displayed below will be called and course details inside it will be shown
 	@CircuitBreaker(name = "circuitBreaker", fallbackMethod = "fallback")
 	public Course getCourseDetails(Integer courseId) {
 		
