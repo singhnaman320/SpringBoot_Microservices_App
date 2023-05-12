@@ -32,5 +32,16 @@ public class ApiCall {
 		return course;
 	}
 	
-	
+	public Course fallback(Exception exception) {
+		
+		logger.info("calling fallback and returning default course data");
+		
+		Course course = new Course();
+		course.setCourseId(1);
+		course.setCourseName("common-course");
+		course.setCourseDuration(1);
+		
+		return course;
+		
+	}
 }
