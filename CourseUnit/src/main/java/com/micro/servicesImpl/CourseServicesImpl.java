@@ -87,12 +87,13 @@ public class CourseServicesImpl implements CourseService{
 		// TODO Auto-generated method stub
 		
 		logger.info("logs before custom span");
+		// To create the custom span we have to Autowire the Tracer(Like above) and provide it name like here (custom-log)
 		Span newSpan = this.tracer.nextSpan().name("custom-log");
 		
 		try (Tracer.SpanInScope ws = this.tracer.withSpan(newSpan.start())) {
 			
 		    // ...
-		    // You can tag a span
+		    // You can tag a span with key value pairs
 		    newSpan.tag("custom-tag", "##333##");
 		    // ...
 		    logger.info("Logs in custom span");
