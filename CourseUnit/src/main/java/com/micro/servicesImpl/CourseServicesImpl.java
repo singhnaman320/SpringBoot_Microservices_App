@@ -90,16 +90,20 @@ public class CourseServicesImpl implements CourseService{
 		Span newSpan = this.tracer.nextSpan().name("custom-log");
 		
 		try (Tracer.SpanInScope ws = this.tracer.withSpan(newSpan.start())) {
+			
 		    // ...
 		    // You can tag a span
 		    newSpan.tag("custom-tag", "##333##");
 		    // ...
 		    logger.info("Logs in custom span");
+		    
 		}
 		finally {
+			
 		    // Once done remember to end the span. This will allow collecting
 		    // the span to send it to a distributed tracing system e.g. Zipkin
 		    newSpan.end();
+		    
 		}
 
 		Course course= dao.findById(courseId)
