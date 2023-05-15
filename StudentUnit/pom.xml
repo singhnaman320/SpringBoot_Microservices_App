@@ -79,11 +79,14 @@
 			<groupId>io.github.resilience4j</groupId>
 			<artifactId>resilience4j-spring-boot2</artifactId>
 		</dependency>
-			<!-- Spring Cloud Sleuth -->
+		<!-- Spring Cloud Sleuth -->
+		<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-sleuth -->
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-sleuth</artifactId>
+		    <groupId>org.springframework.cloud</groupId>
+		    <artifactId>spring-cloud-starter-sleuth</artifactId>
+		    <version>3.1.8</version>
 		</dependency>
+
 		<!-- Spring Cloud Zipkin -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
