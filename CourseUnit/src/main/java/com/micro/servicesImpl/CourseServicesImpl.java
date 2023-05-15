@@ -5,7 +5,10 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.sleuth.Tracer;
 import org.springframework.stereotype.Service;
 
 import com.micro.entities.Course;
@@ -16,6 +19,11 @@ import com.micro.services.CourseService;
 @Service
 public class CourseServicesImpl implements CourseService{
 
+	private static final Logger logger = LoggerFactory.getLogger(CourseServicesImpl.class);
+	
+	@Autowired 
+	private Tracer tracer;
+	
 	@Autowired
 	private CourseJpaDao dao;
 	
