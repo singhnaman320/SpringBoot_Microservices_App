@@ -102,8 +102,11 @@ public class CourseServicesImpl implements CourseService{
 		    newSpan.end();
 		}
 
-		return dao.findById(courseId)
+		Course course= dao.findById(courseId)
 				.orElseThrow(()-> new CourseNotFoundException("Unable to get course details with given Id "+ courseId));
+		
+		logger.info("logs after custom span");
+		return course;
 	}
 
 	@Override
