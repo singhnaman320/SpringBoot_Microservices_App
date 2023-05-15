@@ -65,6 +65,12 @@
 		    <groupId>io.micrometer</groupId>
 		    <artifactId>micrometer-tracing-bridge-brave</artifactId>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.zipkin.reporter2/zipkin-reporter-brave -->
+		<dependency>
+		    <groupId>io.zipkin.reporter2</groupId>
+		    <artifactId>zipkin-reporter-brave</artifactId>
+		    <version>2.16.4</version>
+		</dependency>
 
 	</dependencies>
 	<!-- For Eureka-->
