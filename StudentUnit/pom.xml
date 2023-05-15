@@ -79,6 +79,13 @@
 			<groupId>io.github.resilience4j</groupId>
 			<artifactId>resilience4j-spring-boot2</artifactId>
 		</dependency>
+			<!-- Spring Cloud Sleuth -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-sleuth</artifactId>
+		</dependency>
+		<!-- Spring Cloud Zipkin -->
+		
 	</dependencies>
 	<!-- For Eureka-->
 	<dependencyManagement>
