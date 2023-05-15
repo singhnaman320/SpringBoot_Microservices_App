@@ -1,0 +1,17 @@
+#Name of Eureka_Registery application
+spring:
+  application:
+    name: eureka-discovery-service
+
+#Eureka_Registery server run on given port
+server:
+  port: 8085
+  
+#In production we have cluster of eureka so by default it register itself as well but here we dont want cluster and also we are 
+#running on local host so we made registerWithEureka: false
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://localhost:8085/eureka #when we want to open console so it will open using this url

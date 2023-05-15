@@ -8,14 +8,15 @@ import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.sleuth.Span;
-import org.springframework.cloud.sleuth.Tracer;
 import org.springframework.stereotype.Service;
 
 import com.micro.entities.Course;
 import com.micro.exceptions.CourseNotFoundException;
 import com.micro.repositories.CourseJpaDao;
 import com.micro.services.CourseService;
+
+import io.micrometer.tracing.Span;
+import io.micrometer.tracing.Tracer;
 
 @Service
 public class CourseServicesImpl implements CourseService{
