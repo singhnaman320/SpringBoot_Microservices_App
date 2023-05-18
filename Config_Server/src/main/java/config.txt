@@ -1,3 +1,7 @@
 [] Main motive is to create Spring cloud config server which is Git backed.
- 
+
+[] Spring cloud config server can store/access configuration files to Git. So for that we need a Git repository 
+   so we will create a Git repository locally or we can also use online Git repository.
+   
+
  
