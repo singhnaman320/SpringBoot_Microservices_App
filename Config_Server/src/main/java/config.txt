@@ -1,0 +1,3 @@
+[] Main motive is to create Spring cloud config server which is Git backed.
+ 
+ 
