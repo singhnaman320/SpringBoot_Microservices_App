@@ -90,6 +90,11 @@
 		    <groupId>io.zipkin.reporter2</groupId>
 		    <artifactId>zipkin-reporter-brave</artifactId>
 		</dependency>
+		<!-- Spring Cloud Config -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+		</dependency>
 	</dependencies>
 	<!-- For Eureka-->
 	<dependencyManagement>
