@@ -24,4 +24,4 @@
    http://localhost:8086/student-service/dev
    http://localhost:8086/student-service/prod and similarly for course-service.
    
-   
+   Note: Config server will access the details using APPLICATION_NAME.  
