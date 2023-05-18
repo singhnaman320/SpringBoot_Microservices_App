@@ -17,3 +17,7 @@
    	  http://localhost:8086/student-service/prod : for prod
    	  
    	  Similarly for course-service.
+   	  
+   	  
+[] For accessing web services using config server from Postman, we can use  
+    
