@@ -7,4 +7,5 @@
    1. Open command prompt.
    2. Choose location by using: cd FolderAddress.
    3. Type command [git init] and press enter.
+   4. Type command [git status] to display the state of working directory.
    
