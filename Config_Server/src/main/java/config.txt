@@ -4,4 +4,5 @@
    so we will create a Git repository locally or we can also use online Git repository.
    
 [] Steps to create Git repository locally:
+   1. Open command prompt.
    
