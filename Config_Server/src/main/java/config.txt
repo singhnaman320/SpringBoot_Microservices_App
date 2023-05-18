@@ -5,10 +5,10 @@
    
 [] Steps to create Git repository locally:
    1. Open command prompt.
-   2. Choose location by using: cd FolderAddress.
+   2. Choose location by using: cd FolderAddress and the same location/address must be given in application.properties
    3. Type command [git init] and press enter.
    4. In same folder we are making student-service file.
    5. Type command [git status] to display the state of working directory.
    6. Type command [git add .] and press enter.
    7. Commit the file using [git commit -m "description"] to save the changes to the local repository. 
- 
+   
