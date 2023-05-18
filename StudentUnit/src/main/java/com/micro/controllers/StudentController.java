@@ -34,8 +34,16 @@ public class StudentController {
 	@Autowired
 	private StudentServices studentService;
 	
+	// For Illustration purpose of config server
 	@Value("${message:default message}")
 	private String message;
+	
+	// For Illustration purpose of config server
+	@GetMapping("/message")
+	private String getmessage() {
+		
+		return message;
+	}
 	
 	private static final Logger logger = LoggerFactory.getLogger(StudentController.class);
 	
