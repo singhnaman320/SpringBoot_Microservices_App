@@ -12,4 +12,6 @@
    6. Type command [git add .] and press enter.
    7. Commit the file using [git commit -m "description"] to save the changes to the local repository. 
    8. You can access all the properties through browser using:
-   	  http://localhost:8086/student-service/default	
+   	  http://localhost:8086/student-service/default	: for default
+   	  http://localhost:8086/student-service/dev : for dev
+   	  http://localhost:8086/student-service/prod : for prod
