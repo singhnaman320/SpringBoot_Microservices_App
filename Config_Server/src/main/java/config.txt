@@ -20,4 +20,8 @@
    	  
    	  
 [] For accessing web services using config server from Postman, we can use  
-    
+   http://localhost:8086/student-service/default
+   http://localhost:8086/student-service/dev
+   http://localhost:8086/student-service/prod and similarly for course-service.
+   
+   
