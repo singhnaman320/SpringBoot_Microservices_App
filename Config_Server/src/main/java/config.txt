@@ -15,3 +15,5 @@
    	  http://localhost:8086/student-service/default	: for default
    	  http://localhost:8086/student-service/dev : for dev
    	  http://localhost:8086/student-service/prod : for prod
+   	  
+   	  Similarly for course-service.
