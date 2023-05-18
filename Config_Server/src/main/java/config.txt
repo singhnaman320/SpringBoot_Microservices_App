@@ -8,4 +8,5 @@
    2. Choose location by using: cd FolderAddress.
    3. Type command [git init] and press enter.
    4. Type command [git status] to display the state of working directory.
+   5. In same folder we are making student-service file.
    
