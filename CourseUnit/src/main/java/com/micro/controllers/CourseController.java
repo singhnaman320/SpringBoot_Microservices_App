@@ -30,6 +30,10 @@ public class CourseController {
 	@Autowired
 	private CourseService courseService;
 	
+	// For Illustration purpose of config server
+	@Value("${message:default message}")
+	private String message;
+		
 	
 	
 	// 1. Registering Courses
