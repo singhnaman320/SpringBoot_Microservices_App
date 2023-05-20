@@ -35,10 +35,9 @@ public class StudentController {
 	private StudentServices studentService;
 	
 	// For Illustration purpose of config server
-	@Value("${message:default message}")
+	@Value("${message:default}")
 	private String message;
 	
-	// For Illustration purpose of config server
 	@GetMapping("/message")
 	private String getmessage() {
 		
