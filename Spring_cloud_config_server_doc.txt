@@ -1,0 +1,27 @@
+[] Main motive is to create Spring cloud config server which is Git backed.
+
+[] Spring cloud config server can store/access configuration files to Git. So for that we need a Git repository 
+   so we will create a Git repository locally or we can also use online Git repository.
+   
+[] Steps to create Git repository locally:
+   1. Open command prompt.
+   2. Choose location by using: cd FolderAddress and the same location/address must be given in application.properties
+   3. Type command [git init] and press enter.
+   4. In same folder we are making student-service file.
+   5. Type command [git status] to display the state of working directory.
+   6. Type command [git add .] and press enter.
+   7. Commit the file using [git commit -m "description"] to save the changes to the local repository. 
+   8. You can access all the properties through browser using:
+   	  http://localhost:8086/student-service/default	: for default
+   	  http://localhost:8086/student-service/dev : for dev
+   	  http://localhost:8086/student-service/prod : for prod
+   	  
+   	  Similarly for course-service.
+   	  
+   	  
+[] For accessing web services using config server from Postman, we can use  
+   http://localhost:8086/student-service/default
+   http://localhost:8086/student-service/dev
+   http://localhost:8086/student-service/prod and similarly for course-service.
+   
+   Note: Config server will access the details using APPLICATION_NAME.  
