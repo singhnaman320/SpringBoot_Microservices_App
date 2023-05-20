@@ -96,6 +96,8 @@
 			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
 		<!-- Spring Boot Starter Actuator (To achieve @RefreshScope)-->
+		<!-- Actuator is mainly used to expose operational information about running application like health, 
+		metrics, info, dump, env, refresh etc.-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
