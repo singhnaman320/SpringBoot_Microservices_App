@@ -26,7 +26,7 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/courseDetails")
-@RefreshScope
+@RefreshScope // Changes made in the config server will be automatically reflected while calling API
 public class CourseController {
 
 	@Autowired
