@@ -35,13 +35,13 @@ public class StudentController {
 	private StudentServices studentService;
 	
 	// For Illustration purpose of config server
-	@Value("${message:default}")
+	@Value("${message:default message}")
 	private String message;
 	
 	@GetMapping("/message")
 	private String getmessage() {
 		
-		return message;
+		return this.message;
 	}
 	
 	private static final Logger logger = LoggerFactory.getLogger(StudentController.class);
