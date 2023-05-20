@@ -39,9 +39,9 @@ public class StudentController {
 	private String message;
 	
 	@GetMapping("/message")
-	private String getmessage() {
+	public ResponseEntity<String> getMessage(){
 		
-		return this.message;
+		return new ResponseEntity<String>(message, HttpStatus.OK);
 	}
 	
 	private static final Logger logger = LoggerFactory.getLogger(StudentController.class);
