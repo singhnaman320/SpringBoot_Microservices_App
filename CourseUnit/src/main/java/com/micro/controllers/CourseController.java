@@ -34,7 +34,11 @@ public class CourseController {
 	@Value("${message:default message}")
 	private String message;
 		
-	
+	@GetMapping("/message")
+	public ResponseEntity<String> getMessage(){
+			
+		return new ResponseEntity<String>(message, HttpStatus.OK);
+	}
 	
 	// 1. Registering Courses
 	
