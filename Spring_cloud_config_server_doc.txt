@@ -25,3 +25,29 @@
    http://localhost:8086/student-service/prod and similarly for course-service.
    
    Note: Config server will access the details using APPLICATION_NAME.  
+   
+[] To refresh all the changes made in Config Sever while calling API.
+   () Add actuator dependency.
+   	<!-- Spring Boot Starter Actuator (To achieve @RefreshScope)-->
+      	<!-- Actuator is mainly used to expose operational information about running application like health, metrics, info, dump, env, refresh etc.-->
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-actuator</artifactId>
+	</dependency>
+   () Add @RefreshScope to the controller.
+   () Call API using [http://localhost:8084/actuator/refresh](Note is is POST method) but it will give you response like:
+      	{
+      	"timestamp": "2023-05-20T21:05:48.3094486",
+      	"message": "No endpoint GET /actuator/refresh.",
+      	"details": "uri=/actuator/refresh"
+      	}
+      This is because "/refresh" end point is not enabled by default. We have to enable it.   		
+   () To enable it, add the given properties in application.properties.
+   	#Enable spring boot actuator endpoints
+	management.endpoints.web.exposure.include=*
+   () Again call API using [http://localhost:8084/actuator/refresh](Note is is POST method) but it will give you response like:
+    	[
+    	"config.client.version",
+    	"message"
+	]
+    () Now again call [http://localhost:8088/studentDetails/message] for StudentUnit and similarly CourseUnit and you will get updated messsage. 
