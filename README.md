@@ -60,7 +60,10 @@ This repository deals with codebase of Spring Boot application developed using m
 <h3 dir="auto"><span>Microservices</span><br><br></h3>
 <a><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJS5IT1VROiAK48oyr6w7hd5Ktw-ZZl3L8jA&usqp=CAU" height = "80" width = "80"></a>
 </td>
-
+<td width="40%" align="center">
+<h3 dir="auto"><span>Postman</span><br><br></h3>
+<a><img src="https://img.uxwing.com/wp-content/themes/uxwing/download/brands-social-media/postman-icon.png" height = "80" width = "80"></a>
+</td>
 </tr>
 </td>
 </tr>
