@@ -31,14 +31,7 @@ This repository deals with codebase of Spring Boot application developed using m
 <h3 dir="auto"><span>Hibernate</span><br><br></h3>
 <a><img src="https://www.javatpoint.com/images/hibernate/hibernate2.png" height = "80" width = "80"></a>
 </td>
-<td width="40%" align="center">
-<h3 dir="auto"><span> Eureka </span><br><br></h3>
-<a><img src="https://4.bp.blogspot.com/-trV5mHmQdfE/XBZ8OmhhdwI/AAAAAAAAITA/jcJgWXbOy3AHO89lwV0SIrcepN-3d25BwCLcBGAs/s1600/GvuCOnQi_400x400.jpg" height = "80" width = "80"></a>
-</td>
-<td width="40%" align="center">
-<h3 dir="auto"><span>API Gateway</span><br><br></h3>
-<a><img src="https://www.clipartmax.com/png/middle/195-1955710_api-gateway-icon-assertible-logo-aws-api-gateway-logo.png" height = "80" width = "80"></a>
-</td>
+
 </tr>
 </td>
 </tr>
@@ -63,6 +56,14 @@ This repository deals with codebase of Spring Boot application developed using m
 <td width="40%" align="center">
 <h3 dir="auto"><span>Postman</span><br><br></h3>
 <a><img src="https://img.uxwing.com/wp-content/themes/uxwing/download/brands-social-media/postman-icon.png" height = "80" width = "80"></a>
+</td>
+<td width="40%" align="center">
+<h3 dir="auto"><span> Eureka </span><br><br></h3>
+<a><img src="https://4.bp.blogspot.com/-trV5mHmQdfE/XBZ8OmhhdwI/AAAAAAAAITA/jcJgWXbOy3AHO89lwV0SIrcepN-3d25BwCLcBGAs/s1600/GvuCOnQi_400x400.jpg" height = "80" width = "80"></a>
+</td>
+<td width="40%" align="center">
+<h3 dir="auto"><span>API Gateway</span><br><br></h3>
+<a><img src="https://www.clipartmax.com/png/middle/195-1955710_api-gateway-icon-assertible-logo-aws-api-gateway-logo.png" height = "80" width = "80"></a>
 </td>
 </tr>
 </td>
