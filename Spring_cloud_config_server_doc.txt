@@ -28,6 +28,12 @@
    
 [] To refresh all the changes made in Config Sever while calling API.
    () Add actuator dependency.
+   	<!-- Spring Boot Starter Actuator (To achieve @RefreshScope)-->
+      	<!-- Actuator is mainly used to expose operational information about running application like health, metrics, info, dump, env, refresh etc.-->
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-actuator</artifactId>
+	</dependency>
    () Add @RefreshScope to the controller.
    () Call API using [http://localhost:8084/actuator/refresh](Note is is POST method) but it will give you response like:
       	{
@@ -35,19 +41,11 @@
       	"message": "No endpoint GET /actuator/refresh.",
       	"details": "uri=/actuator/refresh"
       	}
-      This is because "/refresh" end point is not enabled by default. We have to enable it.
-   () To enable it add actuator dependency:
-      	<!-- Spring Boot Starter Actuator (To achieve @RefreshScope)-->
-      	<!-- Actuator is mainly used to expose operational information about running application like health, metrics, info, dump, env, refresh etc.-->
-	<dependency>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-actuator</artifactId>
-	</dependency>	
-    () Add the given properties in application.properties.
+      This is because "/refresh" end point is not enabled by default. We have to enable it.   		
+   () To enable it, add the given properties in application.properties.
    	#Enable spring boot actuator endpoints
 	management.endpoints.web.exposure.include=*
-    () Now add @RefreshScope to given controller.
-    () Again call API using [http://localhost:8084/actuator/refresh](Note is is POST method) but it will give you response like:
+   () Again call API using [http://localhost:8084/actuator/refresh](Note is is POST method) but it will give you response like:
     	[
     	"config.client.version",
     	"message"
