@@ -44,4 +44,5 @@
 		<artifactId>spring-boot-starter-actuator</artifactId>
 	</dependency>	
     () Add the given properties in application.properties.
-   	
+   	#Enable spring boot actuator endpoints
+	management.endpoints.web.exposure.include=*
