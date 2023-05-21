@@ -36,4 +36,6 @@
       "details": "uri=/actuator/refresh"
       }
       This is because "/refresh" end point is not enabled by default. We have to enable it.
-   () 
+   () To enable it add actuator dependency:
+      <!-- Spring Boot Starter Actuator (To achieve @RefreshScope)-->
+		
