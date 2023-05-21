@@ -64,6 +64,10 @@ This repository deals with codebase of Spring Boot application developed using m
 <h3 dir="auto"><span> Eureka </span><br><br></h3>
 <a><img src="https://4.bp.blogspot.com/-trV5mHmQdfE/XBZ8OmhhdwI/AAAAAAAAITA/jcJgWXbOy3AHO89lwV0SIrcepN-3d25BwCLcBGAs/s1600/GvuCOnQi_400x400.jpg" height = "80" width = "80"></a>
 </td>
+<td width="40%" align="center">
+<h3 dir="auto"><span>Zipkin</span><br><br></h3>
+<a><img src="https://zipkin.io/public/favicon.ico" height = "80" width = "80"></a>
+</td>
 </tr>
 </td>
 </tr>
