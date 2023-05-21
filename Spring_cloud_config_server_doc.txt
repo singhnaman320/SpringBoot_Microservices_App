@@ -47,4 +47,4 @@
    	#Enable spring boot actuator endpoints
 	management.endpoints.web.exposure.include=*
     () Now add @RefreshScope to given controller.
-    	
+    () Again call API using [http://localhost:8084/actuator/refresh](Note is is POST method) but it will give you response like:
