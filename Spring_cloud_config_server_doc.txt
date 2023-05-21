@@ -46,3 +46,5 @@
     () Add the given properties in application.properties.
    	#Enable spring boot actuator endpoints
 	management.endpoints.web.exposure.include=*
+    () Now add @RefreshScope to given controller.
+    	
