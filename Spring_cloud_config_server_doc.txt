@@ -52,3 +52,4 @@
     	"config.client.version",
     	"message"
 	]
+    () Now again call [http://localhost:8088/studentDetails/message] for StudentUnit and similarly CourseUnit. 
