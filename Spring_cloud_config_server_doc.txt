@@ -29,7 +29,7 @@
 [] To refresh all the changes made in Config Sever while calling API.
    () Add actuator dependency.
    () Add @RefreshScope to the controller.
-   () Call API using [http://localhost:8084/actuator/refresh] but it will give you response like:
+   () Call API using [http://localhost:8084/actuator/refresh](Note is is POST method) but it will give you response like:
       {
       "timestamp": "2023-05-20T21:05:48.3094486",
       "message": "No endpoint GET /actuator/refresh.",
