@@ -9,7 +9,7 @@ This repository deals with codebase of Spring Boot application developed using m
 <tr align="top">
 <td width="40%" align="center">
 <h3 dir="auto"><span>Spring Tool Suite</span><br><br></h3>
-<a><img src="https://pbs.twimg.com/profile_images/1235954979783012354/t9lO8UAz_400x400.png" height = "80" width = "80"></a>
+<a><img src="https://spring.io/img/projects/spring-tool.svg" height = "80" width = "80"></a>
 </td>
 <td width="40%" align="center">
 <h3 dir="auto"><span>JAVA</span><br><br></h3>
