@@ -1,0 +1,52 @@
+=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+[] Run Zipkin on cmd: []
+
+=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+1. download the Zipkin server maven jar.
+
+   https://repo1.maven.org/maven2/io/zipkin/java/zipkin-server/2.12.9/
+
+2. Open cmd and move to the directory jar download location.
+
+3. Write command:
+
+   java -jar filename.jar
+
+   Example: java -jar zipkin-server-2.12.9-exec.jar
+
+4. You will see a UI like this:
+
+                 				********
+                                  **        **
+                                 *            *
+                                **            **
+                                **            **
+                                 **          **
+                                  **        **
+                                    ********
+                                      ****
+                                      ****
+        ****                          ****
+     ******                           ****                                 ***
+  ****************************************************************************
+    *******                           ****                                 ***
+        ****                          ****
+                                       **
+                                       **
+
+
+             *****      **     *****     ** **       **     **   **
+               **       **     **  *     ***         **     **** **
+              **        **     *****     ****        **     **  ***
+             ******     **     **        **  **      **     **   **
+
+5. Default port on which the Zipkin server is running is 9411.
+
+6. Type http://localhost:9411/zipkin/ on the browser to see the Zipkin console.
+
+7. Send your requestion using Postman.
+
+8. Click on Find Traces to see log details.
+ 
