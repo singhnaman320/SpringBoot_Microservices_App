@@ -75,3 +75,6 @@ This repository deals with codebase of Spring Boot application developed using m
 </table>
 
 <hr>
+
+<h2>Zipkin Console:</h2>
+<a><img src="https://img.uxwing.com/wp-content/themes/uxwing/download/brands-social-media/postman-icon.png" height = "80" width = "80"></a>
